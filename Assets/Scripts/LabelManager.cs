@@ -16,13 +16,19 @@ public class LabelManager : MonoBehaviour
 
     private void Update()
     {
-        DispalyTileCoordinates();
+        DisplayTileCoordinates();
+        ChangeTileName();
     }
 
-    private void DispalyTileCoordinates()
+    private void DisplayTileCoordinates()
     {
         coordinates.x = Mathf.RoundToInt(transform.parent.position.x / 10);
         coordinates.y = Mathf.RoundToInt(transform.parent.position.z / 10);
         label.text = coordinates.x + " , " + coordinates.y;
+    }
+
+    private void ChangeTileName()
+    {
+        transform.parent.name = coordinates.x + " , " + coordinates.y;
     }
 }
